@@ -1,11 +1,12 @@
 import React from 'react';
+import { RangeInput } from '../RangeInput';
 
-import './App.scss'
+import './App.scss';
 
 export const App = () => {
   return (
     <>
-      <h1>Hello App!</h1>
+      <RangeInput />
     </>
   );
 };
