@@ -6,7 +6,7 @@ import './App.scss';
 export const App = () => {
   return (
     <>
-      <RangeInput />
+      <RangeInput min='1' max='155' step='0'/>
     </>
   );
 };

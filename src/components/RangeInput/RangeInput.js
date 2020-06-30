@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './RangeInput.scss';
+
 export class RangeInput extends Component {
   state = {
     value: '',
@@ -9,20 +11,20 @@ export class RangeInput extends Component {
     this.setState({
       value: e.target.value,
     });
+    console.log(e.target.max);
   };
 
   render() {
-    let { min, max } = this.props;
-
+    let { min, max, step } = this.props;
     return (
       <>
-        <h1>{this.state.value}</h1>
+        <h1>{this.state.value || 0}</h1>
         <div className='range'>
           <input
             type='range'
-            step='1'
-            min={min | 0}
-            max={max | 100}
+            step={step || 0}
+            min={min || 0}
+            max={max || 100}
             id='range'
             value={this.state.value}
             onChange={this.updateInputValue}
