@@ -1,21 +1,32 @@
 import React, { Component } from 'react';
 
+import cn from 'classnames';
 import './ProductCard.scss';
 
 export class ProductCard extends Component {
+  state = {
+    buy: false,
+  };
+
+  toggleClass = () => {
+    const buyProduct = this.state.buy;
+    this.setState({ buy: !buyProduct });
+  };
+
   render() {
+    const bottomClass = cn('bottom', { clicked: this.state.buy });
     return (
       <>
         <div className='wrapper'>
           <div className='container'>
             <div className='top'></div>
-            <div className='bottom'>
+            <div className={bottomClass}>
               <div className='left'>
                 <div className='details'>
                   <h1>Chair</h1>
                   <p>£250</p>
                 </div>
-                <div className='buy'>
+                <div className='buy' onClick={this.toggleClass}>
                   <i className='material-icons'>add_shopping_cart</i>
                 </div>
               </div>
@@ -27,7 +38,7 @@ export class ProductCard extends Component {
                   <h1>Chair</h1>
                   <p>Added to your cart</p>
                 </div>
-                <div className='remove'>
+                <div className='remove' onClick={this.toggleClass}>
                   <i className='material-icons'>clear</i>
                 </div>
               </div>
