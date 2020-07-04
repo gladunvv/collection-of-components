@@ -1,6 +1,7 @@
 import React from 'react';
 import { RangeInput } from '../RangeInput';
 import { ProductCard } from '../ProductCard';
+import { BurgerMenu } from '../BurgerMenu';
 
 import './App.scss';
 
@@ -9,6 +10,7 @@ export const App = () => {
     <>
       <RangeInput min='1' max='155' step='0' />
       <ProductCard />
+      <BurgerMenu />
     </>
   );
 };
